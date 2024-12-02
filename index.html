@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="./src/js/index.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
+  <link rel=icon type=image/png href=https://img.icons8.com/color/48/000000/javascript.png>
+  <title>API gas stations</title>
+</head>
+
+
+<body class="bg-gray-100">
+  <header class="bg-blue-500 text-white text-center p-4">
+    <h1 class="text-3xl font-semibold">API Gas Stations</h1>
+  </header>
+
+  <main class="container mx-auto p-14">
+    <button class="btn btn-info btn-sm" onclick="window.location.href = 'https://javyprogrameitor.github.io/Portfolio/'">Portfolio</button>
+    <section class="mb-4">
+      <h2 class="text-2xl text-center text-blue-600 font-bold underline underline-offset-1 mb-2">Filter gas stations</h2>
+      <div class="mb-2">
+        <label for="provincesDropdown" class="font-black text-blue-500">Provinces:</label>
+        <select id="provincesDropdown" class="w-full p-2 border rounded">
+          <option></option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label for="municipalityDropdown" class="font-black text-blue-500">Municipalities:</label>
+        <select id="municipalityDropdown" class="w-full p-2 border rounded">
+          <option>Select a Municipalities</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label for="combustibleDropdown" class="font-black text-blue-500">Select a Fuel Type:</label>
+        <select id="combustibleDropdown" class="w-full p-2 border rounded">
+          <option value="Gasoleo A">Diesel fuel A</option>
+          <option value="Gasoleo Premium">Diesel fuel Premium</option>
+          <option value="Gasolina 95 E5">Gasoline 95 E5</option>
+          <option value="Gasolina 95 E5 Premium">Gasoline 95 E5 Premium</option>
+        </select>
+      </div>
+      <div class="mb-2 font-medium text-blue-500">
+        <label class="inline-flex items-center ">
+          <input type="checkbox" id="abiertasCheckbox" class=" mr-2">
+          Show only open stations
+        </label>
+      </div>
+      <section>
+        <h2 class="text-2xl text-center text-blue-600 font-bold underline underline-offset-1 mb-2">Results</h2>
+        <div id="alertContainer" ></div>
+        <ul id="resultList">
+        </ul>
+      </section>
+  </main>
+</body>
+
+</html>

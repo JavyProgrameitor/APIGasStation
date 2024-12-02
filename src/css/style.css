@@ -1,0 +1,17 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.return-button {
+  padding: 8px 10px;
+  border: black 1px solid;
+  border-radius: 5px;
+  background: linear-gradient(to right, rgb(183, 25, 223), rgb(207, 127, 7));
+  font-weight: bold;
+   font-size: 15px;
+   color: rgb(238, 236, 231);
+  cursor: pointer
+}
