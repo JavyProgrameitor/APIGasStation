@@ -1,12 +1,10 @@
 const API_URL = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/";
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchProvince();
   document.getElementById("provincesDropdown").addEventListener("change", fetchMunicipality);
   document.getElementById("municipalityDropdown").addEventListener("change", makeFilter);
   document.getElementById("combustibleDropdown").addEventListener("change", makeFilter);
   document.getElementById("abiertasCheckbox").addEventListener("change", makeFilter); 
-});
+
 async function fetchProvince() {
   try {
     const response = await fetch(`${API_URL}Listados/Provincias/`);
@@ -88,7 +86,7 @@ async function makeFilter() {
     // If checkbox is checked and no open stations found
     if (openCheckbox && stationsWithPrice.length === 0) {
       alertContainer.innerHTML = `
-        <div class="alert alert-warning p-4 mb-4 bg-yellow-100 text-yellow-700 border-l-4 border-yellow-500">
+        <div class="alert alert-info p-4 mb-4 bg-yellow-100 text-yellow-700 border-l-4 border-blue-500">
           <strong>Warning!</strong> No stations are open at this time.
         </div>
       `;
@@ -119,6 +117,7 @@ async function makeFilter() {
 // Check if the station is open now
 function isStationInService(schedule) {
   const now = new Date();
+  console.log(now)
   const currentDay = now.getDay();
   const currentTime = now.getHours() * 60 + now.getMinutes();
 
@@ -144,5 +143,7 @@ function isStationInService(schedule) {
       return true;
     }
   }
-  return false;
+  return true;
 }
+
+fetchProvince();
